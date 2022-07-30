@@ -32,6 +32,10 @@
     color: var(--dark);
     line-height: 1.25;
   }
+
+  h4 {
+    font-size: 2rem;
+  }
   
   main {
     margin: 20px auto;

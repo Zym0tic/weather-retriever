@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body  class="flex-column min-100-vh">
     <header class="hero">
-        <h1 class="app-title"><i class="fa-solid fa-windsock"></i>Weather Retriever</h1>
+        <h1 class="app-title"><i class="fa-solid fa-windsock"></i>Weather Retriever Application</h1>
     </header>
 
     <main class="flex-row justify-space-between">
-        <div class="col-12 md-4">
+        <div class="col-4 md-4">
 
             <div class="card">
                 <h3 class="card-header ">Search for a City</h3>
@@ -23,13 +23,28 @@
                   <button type="submit" class="btn">Search</button>
                 </form>
             </div>
+            <div class="col-4 col-md-8">
+                <h2 class="subtitle">Previous searches:</h2>
+                <div id="serches-container" class="list-group"></div>
+            </div>
         </div>
-
         <div class="col-12 col-md-8">
-            <h2 class="subtitle">Previous searches:</h2>
-            <div id="serches-container" class="list-group"></div>
-        </div>
-    
+            <div id="current-weather-container" class="card card-body current-weather">
+                <h4>Searchquery name/date/wthricon</h4>
+                <p class="Temp">Temp:</p>
+                <p class="Wind">Wind:</p>
+                <p class="Humidity">Humidity:</p>
+                <p class="UV">UV Index:</p>
+            </div>
+            <div class="weather-forecast">
+                 <h3>5-Day Forecast:</h3>
+                 <div class="flex-row justify-space-between">
+                    
+                 </div>
+            </div>
+           
+          </div>
+
     </main>
     
 
