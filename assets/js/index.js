@@ -26,52 +26,52 @@ var formSubmitHandler = function (event) {
   };
 
 
-// var getWeather = function (city) {
-//     var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-
-//     fetch(apiUrl)
-//     .then(function (response) {
-//       if (response.ok) {
-//         console.log(response);
-//         response.json().then(function (data) {
-//           console.log(data);
-
-
-        
-//           displayWeather(data, city);
-        
-//         });
-//       } else {
-//         alert('Error: ' + response.statusText);
-//       }
-//     })
-//     .catch(function (error) {
-//       alert('Unable to connect to OpenWeather');
-//     });
-
-// } 
-
 var getWeather = function (city) {
-    var cityUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon + "&exclude=" +part +"&appid=" + APIKey;
-    
-    fetch(cityUrl)
+    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+
+
+    fetch(apiUrl)
     .then(function (response) {
       if (response.ok) {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
 
-          fetch ("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit={limit}&appid=" + APIKey)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function (data){
-            console.log(data);
-            displayWeather(data, city);
-          });
 
-});
+        
+          displayWeather(data, city);
+        
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('Unable to connect to OpenWeather');
+    });
+
+} 
+
+// var getWeather = function (city) {
+//     var cityUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon + "&exclude=" +part +"&appid=" + APIKey;
+    
+//     fetch(cityUrl)
+//     .then(function (response) {
+//       if (response.ok) {
+//         console.log(response);
+//         response.json().then(function (data) {
+//           console.log(data);
+        
+//           fetch ("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit={limit}&appid=" + APIKey)
+//           .then(function(response) {
+//             return response.json();
+//           })
+//           .then(function (data){
+//             console.log(data);
+//             displayWeather(data, city);
+//           });
+
+// });
 
 var displayWeather = function (data) {
     cityInfoEl.textContent = data.name + " (" + moment().format("MMM Do YY") + ")";
@@ -82,7 +82,7 @@ var displayWeather = function (data) {
 
 };
 
-
+      
 
 
 

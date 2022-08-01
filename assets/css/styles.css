@@ -1,9 +1,9 @@
 :root {
-    --primary: #bbebf3;
+    --primary: #ffffff;
     --secondary: #ce5b5b;
     --tertiary: #595f81;
     --light-dark: #134c63;
-    --dark: #001d7c;
+    --dark: #122150;
     --border-radius: .3rem;
   }
   
@@ -57,9 +57,7 @@
     color: var(--primary);
     border: none;
     outline: none;
-    background-color: var(--light-dark);
-    box-shadow: 3px 3px var(--dark);
-    transform: translate(-1px, -1px);
+    background-color: var(--dark);
   }
   
    .btn:hover {
@@ -108,12 +106,9 @@
   
   .app-title {
     font-size: 3rem;
-    background-color: var(--primary);
-    color: var(--dark);
+    color: var(--primary);
     padding: 0 10px;
     display: inline-block;
-    border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--light-dark);
   }
   
   .list-group {
@@ -150,8 +145,8 @@
   }
   
   .card-header {
-    color: var(--primary);
-    background-color: var(--dark);
+    color: var(--dark);
+    /* background-color: var(--light-dark); */
     padding: 2.5%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
