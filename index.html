@@ -9,6 +9,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+  ></script>
   </head>
   <body class="flex-column min-100-vh">
     <header class="hero">
@@ -43,11 +47,11 @@
           id="current-weather-container"
           class="card card-body current-weather"
         >
-          <h4>Searchquery name/date/wthricon</h4>
-          <p class="Temp">Temp:</p>
-          <p class="Wind">Wind:</p>
-          <p class="Humidity">Humidity:</p>
-          <p class="UV">UV Index:</p>
+          <h4 id="cityInfo">Search for a City</h4> 
+          <p class="temp">Temp:</p>
+          <p class="wind">Wind:</p>
+          <p class="humidity">Humidity:</p>
+          <p class="uv">UV Index:</p>
         </div>
         <div class="weather-forecast">
           <h3>5-Day Forecast:</h3>
