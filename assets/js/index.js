@@ -7,6 +7,7 @@ var wind = document.querySelector(".wind");
 var humidity = document.querySelector(".humidity");
 var uv = document.querySelector(".uv");
 var icon = document.querySelector(".weather-icon");
+var searches = document.querySelector('#searches-container');
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
@@ -15,6 +16,7 @@ var formSubmitHandler = function (event) {
 
   if (cityName) {
     getWeather(cityName);
+    saveCity(cityName);
 
     //   repoContainerEl.textContent = '';
 
@@ -46,6 +48,9 @@ var getWeather = function (city) {
     });
 
 }
+
+
+// -----------I tried for many hours to get this to work. ended up being able to fetch the city location data but ran out of time
 
 // var getWeather = function (city) {
 //   var cityUrl =
@@ -96,6 +101,16 @@ var displayWeather = function (data) {
   wind.textContent = "Wind: " + data.wind.speed + " MPH";
   humidity.textContent = "Humidity: " + data.main.humidity + "%";
   // uv.textContent = "UV Index: " + ;
+};
+
+
+var saveCity = function (city) {
+  localStorage.setItem(city , JSON.stringify(city));
+  var button = document.createElement("button");
+  button.classList.add("btn");
+  var storedCity = localStorage.getItem(JSON.parse(city));
+  button.textContent = (storedCity);
+  searches.appendChild(button);
 };
 
 cityFormEl.addEventListener("submit", formSubmitHandler);
