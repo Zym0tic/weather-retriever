@@ -7,8 +7,7 @@ var wind = document.querySelector(".wind");
 var humidity = document.querySelector(".humidity");
 var uv = document.querySelector(".uv");
 var icon = document.querySelector(".weather-icon");
-var searches = document.querySelector('#searches-container');
-
+var searches = document.querySelector("#search-container");
 
 // form submit handler
 
@@ -54,7 +53,6 @@ var getWeather = function (city) {
 
 }
 
-
 // -----------I tried for many hours to get this to work. ended up being able to fetch the city location data but ran out of time
 
 // var getWeather = function (city) {
@@ -73,7 +71,6 @@ var getWeather = function (city) {
 //           console.log("data", data);
 //           var lat = data[0].lat;
 //           var lon = data[0].lon;
-//         }}
 
 //           fetch(
 //             "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -82,8 +79,7 @@ var getWeather = function (city) {
 //               lon +
 //               "&appid=" +
 //               APIKey
-//           );
-//         })
+//           )
 //         .then(function (response) {
 //           return response.json();
 //         })
@@ -91,9 +87,10 @@ var getWeather = function (city) {
 //           console.log("weather", data);
 //           displayWeather(data, city);
 //         })
-//           .catch(function (error) {
-//             console.log(error);
-//           })
+//         .catch(function (error) {
+//           console.log(error);
+//         });
+//       })
 //     }
 //   });
 // };
@@ -113,11 +110,11 @@ var displayWeather = function (data) {
 // display buttons for saved cities does not work[p]
 
 var saveCity = function (city) {
-  localStorage.setItem(city , JSON.stringify(city));
+  localStorage.setItem(city, JSON.stringify(city));
   var button = document.createElement("button");
   button.classList.add("btn");
   var storedCity = JSON.parse(localStorage.getItem(city));
-  button.textContent = (storedCity);
+  button.textContent = storedCity;
   console.log(button.textContent);
   searches.appendChild(button);
 };
