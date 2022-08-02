@@ -8,6 +8,7 @@ var humidity = document.querySelector(".humidity");
 var uv = document.querySelector(".uv");
 var icon = document.querySelector(".weather-icon");
 var searches = document.querySelector("#search-container");
+// var cityBtn = document.querySelector(".city-btn");
 
 // form submit handler
 
@@ -18,9 +19,10 @@ var formSubmitHandler = function (event) {
 
   if (cityName) {
     getWeather(cityName);
+    // getForecast(cityName);
     saveCity(cityName);
 
-    //   repoContainerEl.textContent = '';
+    //  cityBtn.textContent = '';
 
     cityInputEl.value = "";
   } else {
@@ -53,9 +55,9 @@ var getWeather = function (city) {
 
 }
 
-// -----------I tried for many hours to get this to work. ended up being able to fetch the city location data but ran out of time
+// -----------I tried for many hours to get this to work. ended up being able to fetch the city location and forcast but ran out of time
 
-// var getWeather = function (city) {
+// var getForecast = function (city) {
 //   var cityUrl =
 //     "http://api.openweathermap.org/geo/1.0/direct?q=" +
 //     city +
@@ -67,10 +69,10 @@ var getWeather = function (city) {
 //       console.log("response", response);
 //       response
 //         .json()
-//         .then(function (data) {
-//           console.log("data", data);
-//           var lat = data[0].lat;
-//           var lon = data[0].lon;
+//         .then(function (cityData) {
+//           console.log("data", cityData);
+//           var lat = cityData[0].lat;
+//           var lon = cityData[0].lon;
 
 //           fetch(
 //             "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -83,9 +85,9 @@ var getWeather = function (city) {
 //         .then(function (response) {
 //           return response.json();
 //         })
-//         .then(function (data) {
-//           console.log("weather", data);
-//           displayWeather(data, city);
+//         .then(function (forecastData) {
+//           console.log("weather", forecastData);
+//           displayWeather(forecastData, city);
 //         })
 //         .catch(function (error) {
 //           console.log(error);
@@ -107,8 +109,14 @@ var displayWeather = function (data) {
   // uv.textContent = "UV Index: " + ;
 };
 
-// display buttons for saved cities does not work[p]
 
+// display forecast
+
+var displayForecast = function (forecastData) {
+
+}
+
+// display buttons for saved cities 
 var saveCity = function (city) {
   localStorage.setItem(city, JSON.stringify(city));
   var button = document.createElement("button");
