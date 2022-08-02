@@ -9,6 +9,9 @@ var uv = document.querySelector(".uv");
 var icon = document.querySelector(".weather-icon");
 var searches = document.querySelector('#searches-container');
 
+
+// form submit handler
+
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
@@ -25,6 +28,8 @@ var formSubmitHandler = function (event) {
     alert("Please enter the name of a city");
   }
 };
+
+// retrieve weather data from API
 
 var getWeather = function (city) {
     var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
@@ -93,6 +98,8 @@ var getWeather = function (city) {
 //   });
 // };
 
+// display the current weather
+
 var displayWeather = function (data) {
   cityInfoEl.textContent =
     data.name + " (" + moment().format("MMM Do YY") + ")";
@@ -103,13 +110,15 @@ var displayWeather = function (data) {
   // uv.textContent = "UV Index: " + ;
 };
 
+// display buttons for saved cities does not work[p]
 
 var saveCity = function (city) {
   localStorage.setItem(city , JSON.stringify(city));
   var button = document.createElement("button");
   button.classList.add("btn");
-  var storedCity = localStorage.getItem(JSON.parse(city));
+  var storedCity = JSON.parse(localStorage.getItem(city));
   button.textContent = (storedCity);
+  console.log(button.textContent);
   searches.appendChild(button);
 };
 
